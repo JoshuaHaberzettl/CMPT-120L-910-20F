@@ -3,23 +3,26 @@
 # I want you to accomplish this by making functions where you see repeated code. 
 # Some things to note. When we have a positive number that gets split up and 85% goes into checking and 15% goes into savings. 
 # All negative numbers gets taken out of the checking account.
-def withdrawl(account, amount) -> float:
-    return account - abs(amount)
 
-def deposit(savings, checking, amount) -> (float, float):
-    savings += amount * 0.15
-    checking += amount * 0.85
-    return checking, savings
 
-def saturdays_bank_transactions(transations) -> (float, float):
-    savings = 1096.25
-    checking = 1590.80
+from typing import Tuple
+savings = 1096.25
+checking = 1590.80
 
-    for transaction in transations:
-        if transaction < 0:
-            checking = withdrawl(checking, transaction)
-        else:
-            checking, savings = deposit(savings, checking, transaction)
+def process_transaction(transaction):
+    global checking
+    global savings
+    if transaction > 0:
+        checking += (transaction * 0.85)
+        savings += (transaction * 0.15)
+    elif transaction < 0:
+        checking += transaction
+    else:
+        print("There was no change made to your account for a transaction.")
+
+def saturdays_bank_transactions(transactions) -> Tuple[float, float]:
+    for charge in transactions:
+        process_transaction(charge)
 
     return checking, savings
 
