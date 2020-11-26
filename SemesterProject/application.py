@@ -1,23 +1,19 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
-from flask.logging import create_logger
+import logging
 app = Flask(__name__)
-logging = create_logger(app)
+app.logger.setLevel(logging.INFO)
 
 
+#default page
 @app.route('/')
 def hello_world():
-    logging.info('default test page')
-    return 'This is a test.'
+    app.logger.info('Default test page')
+    return render_template('default.html')
 
-
+#page w/ special url, says hello and can take a name from the url
 @app.route('/hello/')
-@app.route('/hello/name')
-def hello(name='Josh'):
-    logging.info('page with url extention to test templates')
+@app.route('/hello/<name>')
+def hello(name=None):
+    app.logger.info('Page with url extention')
     return render_template('hello.html', name=name)
-
-#example log calls
-logging.debug('A value for debugging')
-logging.warning('A warning occurred (%d apples)', 42)
-logging.error('An error occurred')
