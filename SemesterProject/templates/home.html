@@ -1,0 +1,14 @@
+<!doctype html>
+<head>  
+  <title>Home Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='homeStyle.css') }}">
+</head>
+
+<!-- all the br's are enter spaces to vertically align the text in the boxes -->
+<div class="aqua pull-left" style="text-align:center"><br \><br \><br \><br \><br \><br \><br \>Welcome to the home page. From here, click on any other box to be taken to that page.</div>
+
+<div class="blue pull-right" style="text-align:center" onclick="location.href='contacts';" style="cursor: pointer;"><br \><br \><br \><br \><br \><br \><br \>Contacts Page</div>
+
+<div class="green pull-left bottom" style="text-align:center" onclick="location.href='aboutMe';" style="cursor: pointer;"><br \><br \><br \><br \><br \><br \><br />About Me Page</div>
+
+<div class="tan pull-right bottom", style="text-align:center", onclick="location.href='nothing';", style="cursor: pointer;"><br \><br \><br \><br \><br \><br \><br \>nothing</div>

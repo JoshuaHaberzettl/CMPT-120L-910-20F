@@ -1,0 +1,16 @@
+body {
+    color: white;
+    background-color: purple;
+}
+
+.column {
+    float: left;
+    width: 33%;
+}
+  
+/* Space between columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

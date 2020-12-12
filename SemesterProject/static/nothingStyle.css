@@ -1,0 +1,6 @@
+body {
+    background-image: url('nothingHere.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}

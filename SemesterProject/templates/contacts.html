@@ -1,0 +1,26 @@
+<!doctype html>
+
+<head>  
+  <title>Contacts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='contactsStyle.css') }}">
+</head>
+
+{% include "contactsLinks.html" %}
+
+<h1>Welcome to the contacts page.</h1>
+
+<div class="row">
+  <div class="column">
+    <h2>Email:</h2>
+    <p>Joshua.Haberzettl1@marist.edu</p>
+  </div>
+  <div class="column">
+    <h2>Phone Number:</h2>
+    <p>(777)666-1337</p>
+  </div>
+  <div class="column">
+    <h2>Address:</h2>
+    <p>123 Real Street</p>
+    <p>Legit Town, NY</p>
+  </div>
+</div>
